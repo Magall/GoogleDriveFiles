@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Permutante", "Permutante.csproj", "{C660213D-4A3F-49E0-A38B-FC67E1A1D231}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C660213D-4A3F-49E0-A38B-FC67E1A1D231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C660213D-4A3F-49E0-A38B-FC67E1A1D231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C660213D-4A3F-49E0-A38B-FC67E1A1D231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C660213D-4A3F-49E0-A38B-FC67E1A1D231}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {821FBE8B-072A-4F6C-88EB-CF27FEE64C01}
+	EndGlobalSection
+EndGlobal
