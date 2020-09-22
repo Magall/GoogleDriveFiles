@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
@@ -26,7 +27,7 @@ namespace Permutante.Services
        
       
 
-        public GoogleDriveInsertFilesResponse InserirDocumento(IFormFile file)
+        public async Task<IRestResponse> InserirDocumento(IFormFile file)
         {
             using (var ms = new MemoryStream())
             {
@@ -42,28 +43,30 @@ namespace Permutante.Services
             var accesToken = Autenticar();
              request.AddHeader("Authorization", "Bearer " + accesToken);
             //var bytes = File.ReadAllBytes(path);
-            var content = new { title = "tetet.pdf", description = "mypdf.pdf", parents = new[] { new { id = "1ogWGSIIlXk7XK_Hquyv_ozTOPOw5-2uy" } }, mimeType = "application/pdf" };
+            var content = new { title = file.FileName, description = file.FileName, parents = new[] { new { id = "1ogWGSIIlXk7XK_Hquyv_ozTOPOw5-2uy" } }, mimeType = "application/pdf" };
             var data = JsonConvert.SerializeObject(content);
             request.AddFile("content", Encoding.UTF8.GetBytes(data), "content", "application/json; charset=utf-8");
             request.AddFile("mypdf.pdf", fileBytes, "mypdf.pdf", "application/pdf");
-            var response = client.Execute(request);
-            var responseData = new GoogleDriveInsertFilesResponse();
-            using JsonDocument doc = JsonDocument.Parse(response.Content);
-            JsonElement root = doc.RootElement;
-           
-            responseData.Id = root.GetProperty("id").ToString();
-            responseData.Title = root.GetProperty("title").ToString();
+            var response =  await client.ExecuteAsync(request);
+                /*var responseData = new GoogleDriveInsertFilesResponse();
 
-            return responseData;
 
+                using JsonDocument doc = JsonDocument.Parse(response.Content);
+                JsonElement root = doc.RootElement;
+
+                responseData.Id = root.GetProperty("id").ToString();
+                responseData.Title = root.GetProperty("title").ToString();
+
+                    //;return Ok(responseData);
+                    return responseData;*/
+                return response;
             }
         }
-        public string Autenticar()
+        public  string Autenticar()
         {
+           
             UserCredential credential;
-
-            string path = @"C:\CurriculumPT.pdf";
-            var bytesData = File.ReadAllBytes(path);
+            WebRequest.DefaultWebProxy.Credentials = CredentialCache.DefaultCredentials;
             using (var stream =
                 new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
             {

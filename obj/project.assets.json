@@ -777,23 +777,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rafael.g.magalhaes\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\de0186481.DIRECIONALBH\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\Permutante\\Permutante.csproj",
+      "projectUniqueName": "C:\\Users\\de0186481.DIRECIONALBH\\Workspace\\GoogleDriveFiles\\Permutante.csproj",
       "projectName": "Permutante",
-      "projectPath": "C:\\Workspace\\Permutante\\Permutante.csproj",
-      "packagesPath": "C:\\Users\\rafael.g.magalhaes\\.nuget\\packages\\",
-      "outputPath": "C:\\Workspace\\Permutante\\obj\\",
+      "projectPath": "C:\\Users\\de0186481.DIRECIONALBH\\Workspace\\GoogleDriveFiles\\Permutante.csproj",
+      "packagesPath": "C:\\Users\\de0186481.DIRECIONALBH\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\de0186481.DIRECIONALBH\\Workspace\\GoogleDriveFiles\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rafael.g.magalhaes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\de0186481.DIRECIONALBH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -801,7 +797,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://nuget.animaeducacao.com.br/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -849,7 +844,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

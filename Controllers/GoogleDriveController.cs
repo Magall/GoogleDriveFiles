@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Drive.v3;
 using Google.Apis.Util.Store;
@@ -32,11 +33,18 @@ namespace Permutante.Controllers
             _drive = drive;
         }
 
-        [HttpPut]
+        [HttpPost]
+        [Produces("application/json")]
         [Consumes("multipart/form-data")]
-        public GoogleDriveInsertFilesResponse InserirDocumento([FromForm]  IFormFile file)
+        public async Task<IActionResult> InserirDocumento( IFormFile file)
         {
-            return _drive.InserirDocumento(file);    
+           var resp = await _drive.InserirDocumento(file);
+            if (resp.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return Ok(resp.Content);
+            }
+            else 
+                return StatusCode(500);
         }
         [HttpDelete]
         public IRestResponse RemoverDocumento([FromForm]string Id)
